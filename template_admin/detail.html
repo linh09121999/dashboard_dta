@@ -1,0 +1,241 @@
+<html lang="vi-VN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Detail
+    </title>
+    <link rel="stylesheet" href="../src/css/index.css" />
+
+
+    <link rel="icon" type="image/x-icon" href="../src/SVG/logo_Dta.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.10.0/dist/css/coreui.min.css" rel="stylesheet"
+        integrity="sha384-iFYnumxmAfPWEvBBHVgQ1pcH7Bj9XLrhznQ6DpVFtF3dGwlEAqe4cmd4NY4cJALM" crossorigin="anonymous">
+    <link href="../src/css/time.css" rel="stylesheet">
+    <link href="../src/css/select.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col height-100">
+        <!-- Header -->
+        <header class="flex items-center justify-between">
+            <div class="select-nav">
+                <div class="select-btn-nav">
+                    <i class="fas fa-bars icon-fun"></i>
+                </div>
+
+                <ul class="options-nav">
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./dashboard.html">
+                            TỔNG QUAN
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./detail.html">
+                            CHI TIẾT
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./report.html">
+                            BÁO CÁO
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./monitor.html">
+                            HỆ THỐNG
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./manage.html">
+                            QUẢN LÝ KHÁCH HÀNG
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <a href="#">
+                    <img alt="Logo" class="logo-css" src="../src/SVG/logo_Dta.svg" />
+                </a>
+            </div>
+            <div class="select-fun">
+                <div class="select-btn-fun">
+                    <i class="fa fa-ellipsis-v icon-fun"></i>
+                </div>
+                <div class="flex items-center space-x-12 div-fun">
+                    <div class="option-fun">
+                        <i class="fas fa-cog icon-fun">
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-bell icon-fun relative bell">
+                            <span class="absolute top-0 left-3 bg-red-500 text-white text-xs rounded-full px-1">
+                                99+
+                            </span>
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-user-circle icon-fun">
+                        </i>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+        <nav class="flex">
+            <div class="flex items-center nav-div-dashboard-2">
+                <a class="nav-text" href="./dashboard.html">
+                    TỔNG QUAN
+                </a>
+            </div>
+            <div class="flex items-center nav-div-show">
+                <a class="nav-text-show" href="./detail.html">
+                    CHI TIẾT
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./report.html">
+                    BÁO CÁO
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./monitor.html">
+                    HỆ THỐNG
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./manage.html">
+                    QUẢN LÝ KHÁCH HÀNG
+                </a>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <main class="flex-grow p-2">
+            <div class="flex items-center justify-between main-title-1">
+                <p class="main-title-text">
+                    BIỂU ĐỒ CHI TIẾT
+                </p>
+                <!-- select dv -->
+                <div>
+                    <select aria-label="State" class="input-color-1">
+                        <option>Đơn vị</option>
+                        <option>Dịch vụ</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- MAIN 1-->
+            <div class="grid grid-cols-1 md:grid-row-2 gap-2 p-2 main-div w-full main-scroll">
+                <!-- select -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center w-full ">
+                    <div class="p-2 justify-center">
+                        <p>ĐƠN VỊ</p>
+                        <div class="flex items-center select-div">
+                            <select aria-label="State" class="select-detail ">
+                                <option>Tất cả</option>
+                                <option>NCP</option>
+                                <option>GTELPAY</option>
+                                <option>VCB</option>
+                                <option>PVCB</option>
+                                <option>EPAY</option>
+                                <option>MOMO</option>
+                                <option>ARG</option>
+                                <option>VIETINBANK</option>
+                                <option>TCB</option>
+                                <option>TPBANK</option>
+                                <option>BIDV</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="p-2 justify-center">
+                        <p>DỊCH VỤ</p>
+                        <div class=" items-center select-div ">
+                            <select aria-label="State" class="form-multi-select" id="multiple-select-counter" multiple
+                                data-coreui-selection-type="counter" data-coreui-search="true">
+                                <option value="eid">EID</option>
+                                <option value="faceRecog">Face-Recog</option>
+                                <option value="sdkM">SDK-Match</option>
+                                <option value="sdkLM">SDK-Liveness-Match</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class=" p-2 justify-center">
+                        <p>KHOẢNG THỜI GIAN</p>
+                        <!-- select khoang time -->
+                        <div class="flex items-center justify-between relative">
+                            <!-- <div id="range-time"></div> -->
+                            <div data-coreui-locale="vi-VN" data-coreui-timepicker="true"
+                                data-coreui-start-date="2022/08/03" data-coreui-end-date=""
+                                data-coreui-toggle="date-range-picker" id="range-time-date" class="div-timeRange w-full"
+                                style="display: block;">
+                            </div>
+                            <div data-coreui-locale="vi-VN" data-coreui-toggle="date-range-picker"
+                                data-coreui-selection-type="month" class="div-timeRange w-full" id="range-time-month"
+                                style="display: none;">
+                            </div>
+                            <div data-coreui-locale="vi-VN" data-coreui-toggle="date-range-picker"
+                                data-coreui-selection-type="year" class="div-timeRange w-full" id="range-time-year"
+                                style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 flex justify-center tabtime" style="align-self: end">
+                        <input class="tablinks active button-day" id="day" type="button" value="Ngày"
+                            onclick="timeRange(event, 'range-time-date')" />
+                        <input class="tablinks button-month" id="month" type="button" value="Tháng"
+                            onclick="timeRange(event, 'range-time-month')" />
+                        <input class="tablinks button-year" id="year" type="button" value="Năm"
+                            onclick="timeRange(event, 'range-time-year')" />
+                    </div>
+                </div>
+
+                <!-- chart -->
+                <div class="flex gap-2 w-full height-100 main-grid">
+                    <!-- chart-bar -->
+                    <div class="grid gap-2 p-2 rounded-lg shadow main-div-f w-full">
+
+                        <div class=" flex items-center justify-center ">
+                            <canvas class="canvas-mobile" id="chart-bar-2"></canvas>
+                        </div>
+                    </div>
+                    <!-- chart-line -->
+                    <div class="grid gap-2 p-2 rounded-lg shadow main-div-f w-full">
+
+                        <div class="flex items-center justify-center ">
+                            <canvas class="canvas-mobile" id="chart-line-1"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+        <!-- Footer -->
+        <footer class="p-4 flex items-center">
+            <div class="flex items-center p-2">
+                <i class="fa fa-circle mr-2 icon-circle-footer"></i>
+                <div class="main-title-text" id="digital-clock">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../src/plugins/js/3.4.16.js"></script>
+
+<script src="../src/plugins/js/Chart.min.js"></script>
+
+<script src="../src/js/index.js"></script>
+<script src="../src/js/detail.js"></script>
+
+<script src="../src/plugins/js/moment.js" type="text/javascript"></script>
+<script src="../src/plugins/js/coreui.bundle.js"></script>
+
+
+</html>

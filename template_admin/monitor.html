@@ -1,0 +1,356 @@
+<html lang="vi-VN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Monitor
+    </title>
+    <link rel="stylesheet" href="../src/css/index.css" />
+    <link rel="icon" type="image/x-icon" href="../src/SVG/logo_Dta.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../src/plugins/css/buttons.dataTables.css" rel="stylesheet">
+    <link href="../src/plugins/css/dataTables.dataTables.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/select.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.10.0/dist/css/coreui.min.css" rel="stylesheet"
+        integrity="sha384-iFYnumxmAfPWEvBBHVgQ1pcH7Bj9XLrhznQ6DpVFtF3dGwlEAqe4cmd4NY4cJALM" crossorigin="anonymous">
+    <link href="../src/css/time.css" rel="stylesheet">
+    <link href="../src/css/table.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col height-100">
+        <!-- Header -->
+        <header class="flex items-center justify-between">
+            <div class="select-nav">
+                <div class="select-btn-nav">
+                    <i class="fas fa-bars icon-fun"></i>
+                </div>
+
+                <ul class="options-nav">
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./dashboard.html">
+                            TỔNG QUAN
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./detail.html">
+                            CHI TIẾT
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./report.html">
+                            BÁO CÁO
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./monitor.html">
+                            HỆ THỐNG
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./manage.html">
+                            QUẢN LÝ KHÁCH HÀNG
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <a href="#">
+                    <img alt="Logo" class="logo-css" src="../src/SVG/logo_Dta.svg" />
+                </a>
+            </div>
+            <div class="select-fun">
+                <div class="select-btn-fun">
+                    <i class="fa fa-ellipsis-v icon-fun"></i>
+                </div>
+                <div class="flex items-center space-x-12 div-fun">
+                    <div class="option-fun">
+                        <i class="fas fa-cog icon-fun">
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-bell icon-fun relative bell">
+                            <span class="absolute top-0 left-3 bg-red-500 text-white text-xs rounded-full px-1">
+                                99+
+                            </span>
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-user-circle icon-fun">
+                        </i>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+        <nav class="flex">
+            <div class="flex items-center nav-div-dashboard-2">
+                <a class="nav-text" href="./dashboard.html">
+                    TỔNG QUAN
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./detail.html">
+                    CHI TIẾT
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./report.html">
+                    BÁO CÁO
+                </a>
+            </div>
+            <div class="flex items-center nav-div-show">
+                <a class="nav-text-show" href="./monitor.html">
+                    HỆ THỐNG
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./manage.html">
+                    QUẢN LÝ KHÁCH HÀNG
+                </a>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <main class="flex-grow p-2">
+            <div class="flex items-center justify-between main-title-1">
+                <p class="main-title-text">
+                    THỐNG KÊ SỰ PHẢN HỒI CỦA HỆ THỐNG THEO NGÀY
+                </p>
+                <!-- select day -->
+                <div>
+                    <div class="select-menu">
+                        <div class="select-btn">
+                            <span class="sBtn-text" id="sBtn-text-date">Chọn thời gian</span>
+                            <i class="fa fa-chevron-down btn-down" style="font-size: 12pt;"></i>
+                        </div>
+
+                        <ul class="options">
+                            <li class="option">
+                                <span class="option-text ">Tổng</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Hôm nay</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Hôm qua</span>
+                            </li>
+                            <div class="btn-select-time" id="div-select-date">Tùy chọn</div>
+                        </ul>
+                    </div>
+                </div>
+                <!-- pop up select month -->
+                <div class="custom-model-main-time">
+                    <div class="custom-model-inner-time">
+                        <div class="close-btn-time" id="close-btn-date">×</div>
+                        <div class="custom-model-wrap-time">
+                            <div class="pop-up-content-wrap-time">
+                                <div class="border rounded show-date" data-coreui-locale="vi-VN"
+                                    data-coreui-toggle="calendar">
+                                </div>
+                                <div class="flex justify-end space-x-2 div-btn-fn">
+                                    <button class=" btn-X" type="button" id="cancel-select-date">
+                                        Hủy
+                                    </button>
+                                    <button class=" btn-Save" type="button" id="save-select-date">
+                                        Đồng ý
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-overlay-time"></div>
+                </div>
+
+            </div>
+            <!-- Main1 -->
+            <div class="flex gap-4 p-2 main-div main-grid main-scroll grid-cols-mobile">
+                <!-- trang thai -->
+                <div class="grid gap-2 div-show-status">
+                    <div class="p-2 rounded-lg main-div div-act">
+                        <label class="main-title-text">
+                            DỊCH VỤ EID
+                        </label>
+                        <div class="flex p-2 gap-2 justify-center items-center">
+                            <div class="grid p-2 items-center  div_status">
+                                <img class="width-image" alt="success" src="../src/SVG/seccess.svg" />
+                                <label>
+                                    08:00:00 - 08:05:00
+                                </label>
+                            </div>
+                            <div class="grid p-2 gap-4 items-center justify-center">
+                                <i class="icon_warning fa relative">
+                                    <span
+                                        class="absolute -top-2 -right-2 bg-gray-200 text-gray-900 text-xs rounded-full px-1 text-[10px] w-5 h-5">
+                                        10
+                                    </span>
+                                </i>
+
+                                <i class="icon_error fa relative">
+                                    <span
+                                        class="absolute -top-2 -right-2 bg-gray-200 text-gray-900 text-xs rounded-full px-1 text-[10px] w-5 h-5">
+                                        10
+                                    </span>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 rounded-lg div-deact main-div">
+                        <label class="main-title-text">
+                            DỊCH VỤ SDK-LIVENESS-MATCH
+                        </label>
+                        <div class="flex p-2 gap-2 justify-center items-center ">
+                            <div class="grid p-2 items-center  div_status">
+                                <img alt="success" src="../src/SVG/seccess.svg" class="width-image" />
+                                <label>
+                                    08:00:00 - 08:05:00
+                                </label>
+                            </div>
+                            <div class="grid p-2 gap-4 items-center justify-center">
+                                <i class="icon_diswarning fa relative">
+                                </i>
+
+                                <i class="icon_diserror fa relative">
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 rounded-lg div-deact main-div">
+                        <label class="main-title-text">
+                            DỊCH VỤ SDK-MATCH
+                        </label>
+                        <div class="flex p-2 gap-2 justify-center items-center ">
+                            <div class="grid p-2 items-center  div_status">
+                                <img alt="error" src="../src/SVG/error.svg" class="width-image" />
+                                <label>
+                                    08:00:00 - 08:05:00
+                                </label>
+                            </div>
+                            <div class="grid p-2 gap-4 items-center justify-center">
+                                <i class="icon_warning fa relative">
+                                    <span
+                                        class="absolute -top-2 -right-2 bg-gray-200 text-gray-900 text-xs rounded-full px-1 text-[10px] w-5 h-5">
+                                        10
+                                    </span>
+                                </i>
+
+                                <i class="icon_error fa relative">
+                                    <span
+                                        class="absolute -top-2 -right-2 bg-gray-200 text-gray-900 text-xs rounded-full px-1 text-[10px] w-5 h-5">
+                                        10
+                                    </span>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 rounded-lg div-deact main-div">
+                        <label class="main-title-text">
+                            DỊCH VỤ FACE-RECOG
+                        </label>
+                        <div class="flex p-2 gap-2 justify-center items-center ">
+                            <div class="grid p-2 items-center  div_status">
+                                <img alt="warning" src="../src/SVG/warnning.svg" class="width-image" />
+                                <label>
+                                    08:00:00 - 08:05:00
+                                </label>
+                            </div>
+                            <div class="grid p-2 gap-4 items-center justify-center">
+                                <i class="icon_warning fa relative">
+                                    <span
+                                        class="absolute -top-2 -right-2 bg-gray-200 text-gray-900 text-xs rounded-full px-1 text-[10px] w-5 h-5">
+                                        10
+                                    </span>
+                                </i>
+                                <i class="icon_diserror fa relative"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- success-faile -->
+                <div class="grid gap-2 w-full">
+                    <!-- chart line -->
+                    <div>
+                        <div class="flex items-center justify-between main-title-2">
+                            <p class="main-title-text">
+                                PHẢN HỒI
+                            </p>
+                        </div>
+                        <!-- MAIN -->
+                        <div class="p-2 shadow main-div">
+                            <!-- style="max-height: 400px;" -->
+                            <canvas class="canvas-mobile" id="chart-line-2"></canvas>
+                        </div>
+                    </div>
+                    <!-- table -->
+                    <div>
+                        <div class="flex items-center justify-between main-title-2">
+                            <p class="main-title-text">
+                                THÀNH CÔNG
+                            </p>
+                        </div>
+                        <!-- MAIN -->
+                        <div class="gap-2 p-2 items-center justify-center main-div">
+                            <table id="table-success" class="table table-striped table-bordered" cellspacing="0">
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between main-title-2">
+                            <p class="main-title-text">
+                                THẤT BẠI
+                            </p>
+                        </div>
+                        <!-- MAIN -->
+                        <div class="gap-2 p-2 items-center justify-center main-div">
+                            <table id="table-false" class="table table-striped table-bordered" cellspacing="0">
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+        <!-- Footer -->
+        <footer class=" p-4 flex items-center">
+            <div class="flex items-center p-2">
+                <i class="fa fa-circle mr-2 icon-circle-footer"></i>
+                <div class="main-title-text" id="digital-clock">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../src/plugins/js/3.4.16.js"></script>
+
+<script src="../src/js/index.js"></script>
+
+<script src="../src/plugins/js/Chart.min.js"></script>
+
+<script src="../src/plugins/js/moment.js" type="text/javascript"></script>
+
+<script src="../src/plugins/js/jquery.min.js"></script>
+
+<script src="../src/plugins/js/table/jquery-3.7.1.js"></script>
+<script src="../src/plugins/js/table/dataTables.js"></script>
+<script src="../src/plugins/js/table/dataTables.buttons.js"></script>
+<script src="../src/plugins/js/table/buttons.dataTables.js"></script>
+<script src="../src/plugins/js/table/jszip.min.js"></script>
+<script src="../src/plugins/js/table/buttons.html5.min.js"></script>
+<script src="../src/plugins/js/table/buttons.colVis.min.js"></script>
+
+<script src="../src/plugins/js/bootstrap.js"></script>
+<script src="../src/plugins/js/coreui.bundle.js"></script>
+
+<script type="text/javascript" src="../src/js/monitor.js"></script>
+
+</html>

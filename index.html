@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Login Page
+    </title>
+    <link rel="icon" type="image/x-icon" href="../src/SVG/DTA.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+</head>
+
+<body class="flex items-center justify-center min-h-screen ">
+    <div class="flex w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="w-1/2 p-8" style="border: 1px solid #ddd;">
+            <img alt="Company logo and illustration of data analysis" class="mx-auto mb-4" src="./src/SVG/logo_Dta.svg"
+                width="300" />
+            <img alt="img" src="./src/SVG/image.svg" />
+        </div>
+        <div class="w-1/2 p-8 bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+            <div class="w-full max-w-sm">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-blue-500">
+                        </i>
+                    </div>
+                </div>
+                <form method="POST">
+                    <div class="mb-4">
+                        <label class="block text-white text-sm mb-2" for="username">
+                            Tên tài khoản
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <i class="fas fa-user text-gray-400">
+                                </i>
+                            </span>
+                            <input
+                                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                id="username" placeholder="Tên tài khoản" type="text" />
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-white text-sm mb-2" for="password">
+                            Mật khẩu
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <i class="fas fa-lock text-gray-400">
+                                </i>
+                            </span>
+                            <input
+                                class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                id="password" placeholder="Mật khẩu" type="password" />
+                            <!-- <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                <i class="fas fa-eye text-gray-400">
+                                </i>
+                            </span> -->
+                        </div>
+                    </div>
+                    <div class="mb-4 text-right">
+                        <a class="text-white text-sm" href="#">
+                            Quên mật khẩu?
+                        </a>
+                    </div>
+                    <div>
+                        <button id="login"
+                            class="w-full py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Đăng nhập
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./src/plugins/js/3.4.16.js"></script>
+
+</html>

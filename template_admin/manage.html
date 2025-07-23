@@ -1,0 +1,851 @@
+<html lang="vi-VN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Manage
+    </title>
+    <link rel="icon" type="image/x-icon" href="../src/SVG/logo_Dta.svg">
+    <link rel="stylesheet" href="../src/css/index.css" />
+    <link rel="stylesheet" href="../src/css/select.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./src/plugins/css/all.min.css" /> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="../src/plugins/css/buttons.bootstrap.css" rel="stylesheet">
+    <link href="../src/plugins/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="../src/plugins/css/buttons.dataTables.css" rel="stylesheet">
+    <link href="../src/plugins/css/dataTables.dataTables.css" rel="stylesheet">
+
+    <link href="../src/css/table.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex flex-col height-100">
+        <!-- Header -->
+        <header class="flex items-center justify-between">
+            <div class="select-nav">
+                <div class="select-btn-nav">
+                    <i class="fas fa-bars icon-fun"></i>
+                </div>
+
+                <ul class="options-nav">
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./dashboard.html">
+                            TỔNG QUAN
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./detail.html">
+                            CHI TIẾT
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./report.html">
+                            BÁO CÁO
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./monitor.html">
+                            HỆ THỐNG
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./manage.html">
+                            QUẢN LÝ KHÁCH HÀNG
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <a href="#">
+                    <img alt="Logo" class="logo-css" src="../src/SVG/logo_Dta.svg" />
+                </a>
+            </div>
+            <div class="select-fun">
+                <div class="select-btn-fun">
+                    <i class="fa fa-ellipsis-v icon-fun"></i>
+                </div>
+                <div class="flex items-center space-x-12 div-fun">
+                    <div class="option-fun">
+                        <i class="fas fa-cog icon-fun">
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-bell icon-fun relative bell">
+                            <span class="absolute top-0 left-3 bg-red-500 text-white text-xs rounded-full px-1">
+                                99+
+                            </span>
+                        </i>
+                    </div>
+
+                    <div class="option-fun">
+                        <i class="fas fa-user-circle icon-fun">
+                        </i>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+        <nav class="flex">
+            <div class="flex items-center nav-div-dashboard-2">
+                <a class="nav-text" href="./dashboard.html">
+                    TỔNG QUAN
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./detail.html">
+                    CHI TIẾT
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./report.html">
+                    BÁO CÁO
+                </a>
+            </div>
+            <div class="flex items-center nav-div">
+                <a class="nav-text" href="./monitor.html">
+                    HỆ THỐNG
+                </a>
+            </div>
+            <div class="flex items-center nav-div-show">
+                <a class="nav-text-show" href="./manage.html">
+                    QUẢN LÝ KHÁCH HÀNG
+                </a>
+            </div>
+        </nav>
+
+        <main class="flex-grow p-2 ">
+            <div class="flex gap-4 p-2 main-grid main-scroll grid-cols-mobile">
+                <div class="grid gap-4 w-kh">
+                    <button class="flex items-center justify-center btn-add transition" type="button" id="addKH">
+                        <i class="fas fa-plus-circle icon-add">
+                        </i>
+                        THÊM KHÁCH HÀNG
+                    </button>
+
+                    <div class=" grid gap-2 kh-scroll" id="kh-scroll">
+                        <div class="p-2 rounded-lg  main-div-f div-act">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG NCB
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_ncb" src="../src/image/logo_bank/logo-NCB.png" class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG GTELPAY
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_gtelpay" src="../src/image/logo_bank/logo-gtelpay.png"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-MATCH</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG VCB
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_vcb" src="../src/image/logo_bank/logo-Vietcombank.webp"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">FACE-RECOG</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG PVCB
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_pvcb" src="../src/image/logo_bank/logo-pvcombank.png"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">FACE-RECOG</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG EPAY
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_epay" src="../src/image/logo_bank/Logo-epay.webp"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG MOMO
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_momo" src="../src/image/logo_bank/loo-momo.svg"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG AGR
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_agr" src="../src/image/logo_bank/logo_agribank.png"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG VIETINBANK
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_vietinbank" src="../src/image/logo_bank/Logo-VietinBank.webp"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG TCB
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_tcb" src="../src/image/logo_bank/logo-techcombank.png"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG BIDV
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_bidv" src="../src/image/logo_bank/logo-BIDV.webp"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg div-deact main-div-f ">
+                            <label class="main-title-text">
+                                KHÁCH HÀNG TPBANK
+                            </label>
+                            <div class="flex  gap-2  div_status justify-between items-center">
+                                <div class="grid p-2 items-center  div_status">
+                                    <img alt="logo_tpbank" src="../src/image/logo_bank/logo-TPBank.webp"
+                                        class="width-image" />
+                                </div>
+                                <div class="grid p-2 gap-4 items-center div-hd">
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">EID</span>
+                                        <input aria-label="checkbox" checked type="checkbox">
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="span-info">SDK-LIVENESS-MATCH</span>
+                                        <input aria-label="checkbox" type="checkbox">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pop up them khach hang -->
+                <div class="custom-model-main-kh">
+                    <div class="custom-model-inner-kh">
+                        <div class="close-btn-kh" id="close-btn-kh">×</div>
+                        <div class="custom-model-wrap-kh">
+                            <div class="pop-up-content-wrap-kh">
+                                <div class="grid gap-2 w-full" style="height: fit-content">
+                                    <div>
+                                        <div class="flex items-center justify-between main-title-1">
+                                            <p class="main-title-text">
+                                                THÔNG TIN KHÁCH HÀNG
+                                            </p>
+                                        </div>
+                                        <div class="flex shadow items-center justify-center main-div p-2">
+                                            <!-- main1 -->
+                                            <div class="w-full">
+                                                <div class="p-2 justify-center">
+                                                    <label>
+                                                        Mã khách hàng
+                                                    </label>
+                                                    <div class="flex items-center select-div">
+                                                        <input class="py-2 pl-3 pr-4 select-detail"
+                                                            id="customer-code-add" placeholder="Mã khách hàng"
+                                                            type="text" />
+                                                    </div>
+
+                                                </div>
+                                                <div class="p-2 justify-center">
+                                                    <label>
+                                                        Tên khách hàng
+                                                    </label>
+                                                    <div class="flex items-center select-div">
+                                                        <input class="py-2 pl-3 pr-4 select-detail"
+                                                            id="customer-name-add" placeholder="Tên khách hàng"
+                                                            type="text" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex items-center justify-between main-title-1">
+                                            <p class="main-title-text">
+                                                TÀI KHOẢN ĐĂNG NHẬP
+                                            </p>
+                                        </div>
+                                        <div class="flex shadow items-center justify-center main-div p-2 "
+                                            id="add-kh-User" style="color: #0F3B99;">
+                                            <!-- ds tai khoan -->
+                                            <i class="fa fa-user-plus icon-add"></i>Thêm
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex items-center justify-between main-title-1">
+                                            <p class="main-title-text">
+                                                CẤU HÌNH DỊCH VỤ
+                                            </p>
+                                        </div>
+                                        <div class="flex shadow items-center justify-center main-div p-2" id="add-kh-dv"
+                                            style="color: #0F3B99;">
+                                            <i class="fas fa-plus-circle icon-add"></i>Thêm dịch vụ
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end space-x-2 div-btn-fn">
+                                        <button class=" btn-X" type="button" id="cancel-kh">
+                                            Hủy
+                                        </button>
+                                        <button class=" btn-Save" type="button" id="save-kh">
+                                            Lưu
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-overlay-kh"></div>
+                </div>
+
+                <!-- show theo kh -->
+                <div class="grid gap-2 w-full" style="height: fit-content">
+                    <div>
+                        <div class="flex items-center justify-between main-title-1">
+                            <p class="main-title-text">
+                                THÔNG TIN KHÁCH HÀNG
+                            </p>
+                        </div>
+                        <div class="flex shadow items-center justify-center main-div p-2">
+                            <!-- main1 -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
+                                <div>
+                                    <div class="p-2 justify-center">
+                                        <label>
+                                            Mã khách hàng
+                                        </label>
+                                        <div class="flex items-center select-div">
+                                            <input class="py-2 pl-3 pr-4 select-detail" id="customer-code" value="A123"
+                                                disabled placeholder="Mã khách hàng" type="text" />
+                                        </div>
+
+                                    </div>
+                                    <div class="p-2 justify-center">
+                                        <label>
+                                            Tên khách hàng
+                                        </label>
+                                        <div class="flex items-center select-div">
+                                            <input class="py-2 pl-3 pr-4 select-detail" id="customer-name" value="NCB"
+                                                disabled placeholder="Tên khách hàng" type="text" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <label>
+                                        Dịch vụ sử dụng
+                                    </label>
+                                    <div class="grid p-2 rounded-lg gap-2 main-div-f dvsd-scroll">
+                                        <!-- dv su dung -->
+                                        <div id="dv-1" class="flex items-center justify-between">
+                                            <label>
+                                                EID
+                                            </label>
+                                            <div class="stt_deactive ">
+                                                <span>Không hoạt động</span>
+                                            </div>
+
+                                        </div>
+                                        <div id="dv-2" class="flex items-center justify-between">
+                                            <label>
+                                                SDK-LIVENESS-MATCH
+                                            </label>
+                                            <div class="stt_active ">
+                                                <span>Hoạt động</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between main-title-1">
+                            <p class="main-title-text">
+                                TÀI KHOẢN ĐĂNG NHẬP
+                            </p>
+                        </div>
+                        <div class="flex shadow items-center justify-center main-div p-2 user-scroll" id="user-scroll">
+                            <!-- main2 -->
+                            <div class="w-full grid gap-2">
+                                <!-- ds tai khoan -->
+                                <div class="flex justify-end " id="btn-add-user">
+                                    <button class="button" type="button" id="addUser">
+                                        <i class="fa fa-user-plus icon-add"></i>Thêm
+                                    </button>
+                                </div>
+                                <div class="w-full" id="tb-user">
+                                    <table id="table-user" class="table table-striped table-bordered" cellspacing="0">
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- pop up them tai khoan -->
+                            <div class="custom-model-main-user">
+                                <div class="custom-model-inner-user">
+                                    <div class="close-btn-user" id="close-btn-user">×</div>
+                                    <div class="custom-model-wrap-user">
+                                        <div class="pop-up-content-wrap-user">
+                                            <form method="POST" class="grid gap-4">
+                                                <label class="text-1" style="font-size: 32px;">Thêm tài khoản</label>
+                                                <div
+                                                    class="grid grid-cols-1 md:grid-cols-2 w-full gap-4 p-2 rounded-lg shadow main-div">
+                                                    <div>
+                                                        <div class="p-2 justify-center">
+                                                            <label>
+                                                                Tên tài khoản
+                                                            </label>
+                                                            <div class="flex items-center select-div relative">
+                                                                <span class="absolute left-2"><i
+                                                                        class="fas fa-user"></i></span>
+                                                                <input class="select-detail py-2 pl-7 pr-4  w-full"
+                                                                    id="name_user" placeholder="Tên tài khoản"
+                                                                    type="text" />
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="p-2 justify-center">
+                                                            <label>
+                                                                Mật khẩu
+                                                            </label>
+                                                            <div class="flex items-center select-div relative">
+                                                                <span class="absolute left-2"><i
+                                                                        class="fas fa-lock"></i></span>
+                                                                <input class="select-detail py-2 pl-7 pr-4  w-full"
+                                                                    id="pass_user" placeholder="Mật khẩu" type="text" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="p-2 justify-center">
+                                                            <label>
+                                                                Mô tả
+                                                            </label>
+                                                            <div class="flex items-center select-div">
+                                                                <textarea class="py-2 pl-3 pr-4 select-detail  w-full "
+                                                                    style="height: 100px;" id="describe_user"
+                                                                    placeholder="Mô tả"></textarea>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-end space-x-2 div-btn-fn">
+                                                    <button class=" btn-X" type="button" id="cancel-user">
+                                                        Hủy
+                                                    </button>
+                                                    <button class=" btn-Save" type="button" id="save-user">
+                                                        Lưu
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-overlay-user"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between main-title-1">
+                            <p class="main-title-text">
+                                CẤU HÌNH THEO DỊCH VỤ
+                            </p>
+                            <div>
+                                <select aria-label="dv" class="input-color-1">
+                                    <option>EID</option>
+                                    <option>SDK-LIVENESS-MATCH</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="shadow items-center justify-center main-div p-2 gap-4">
+                            <div class="w-full grid gap-2">
+                                <button class="w-full flex items-center justify-center btn-deact" id="add-dv"
+                                    type="button">
+                                    <i class="fas fa-plus-circle icon-add">
+                                    </i>
+                                    Thêm dịch vụ
+                                </button>
+
+                                <!-- main3 -->
+                                <!-- <div class="grid gap-2 w-dv"> -->
+                                <!-- <button id="btn-dv-1" class="w-full flex justify-between items-center btn-act"
+                                    type="button"> EID
+                                    <i class="fas fa-chevron-right "> </i>
+                                </button>
+                                <button id="btn-dv-2" class="w-full flex justify-between items-center btn-deact"
+                                    type="button">
+                                    SDK-LIVENESS-MATCH
+                                    <i class="fas fa-chevron-right"> </i>
+                                </button> -->
+
+
+                                <!-- </div> -->
+                                <!-- pop up them dich vu -->
+                                <div class="custom-model-main">
+                                    <div class="custom-model-inner">
+                                        <div class="close-btn" id="close-btn">×</div>
+                                        <div class="custom-model-wrap">
+                                            <div class="pop-up-content-wrap grid gap-2">
+                                                <div class=" items-center select-div">
+                                                    <select aria-label="Select dv" class="select-detail space-x-2">
+                                                        <option value="eid">EID</option>
+                                                        <option value="faceRecog">Face-Recog</option>
+                                                        <option value="sdkM">SDK-Match</option>
+                                                        <option value="sdkLM">SDK-Liveness-Match</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <div class="tabadd">
+                                                        <button class="tabAddlinks active"
+                                                            onclick="openTabAdd(event, 'uat-add')">UAT</button>
+                                                        <button class="tabAddlinks"
+                                                            onclick="openTabAdd(event, 'production-add')">PRODUCTION</button>
+                                                    </div>
+                                                    <div id="uat-add" class="tabaddcontent" style="display: block;">
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label>
+                                                                CLIENT ID
+                                                            </label>
+                                                            <div class="flex items-center select-div  w-text-dv">
+                                                                <input class="py-2 pl-3 pr-4 select-detail"
+                                                                    id="cleint-id-uat" placeholder="cleint id uat"
+                                                                    type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label class="justify-center">
+                                                                PUBLIC KEY
+                                                            </label>
+                                                            <div class="flex items-center select-div w-text-dv">
+                                                                <textarea class="py-2 pl-3 pr-4 select-detail"
+                                                                    id="public-key-uat" placeholder="public key uat"
+                                                                    type="text" style="height: 120px;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label>
+                                                                TRẠNG THÁI HOẠT ĐỘNG
+                                                            </label>
+                                                            <label class="toggle">
+                                                                <input aria-label="check status" id="checkStt"
+                                                                    type="checkbox">
+                                                                <div class="slider"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="production-add" class="tabaddcontent">
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label>
+                                                                CLIENT ID
+                                                            </label>
+                                                            <div class="flex items-center select-div "
+                                                                style="width: 75%;">
+                                                                <input class="py-2 pl-3 pr-4 select-detail"
+                                                                    id="cleint-id-prod"
+                                                                    placeholder="cleint id production" type="text" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label class="justify-center">
+                                                                PUBLIC KEY
+                                                            </label>
+                                                            <div class="flex items-center select-div"
+                                                                style="width: 75%;">
+                                                                <textarea class="py-2 pl-3 pr-4 select-detail"
+                                                                    id="public-key-prod"
+                                                                    placeholder="public key production" type="text"
+                                                                    style="height: 120px;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex p-2 justify-between items-center">
+                                                            <label>
+                                                                TRẠNG THÁI HOẠT ĐỘNG
+                                                            </label>
+                                                            <label class="toggle">
+                                                                <input aria-label="check" type="checkbox">
+                                                                <div class="slider"></div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex justify-end space-x-2 div-btn-fn">
+                                                    <button class=" btn-X" type="button" id="cancel-dv">
+                                                        Hủy
+                                                    </button>
+                                                    <button class=" btn-Save" type="button" id="save-dv">
+                                                        Lưu
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-overlay"></div>
+                                </div>
+                                <!-- div cau hinh dv -->
+                                <div class="w-full">
+                                    <div class="tab">
+                                        <button class="tablinks active" onclick="openTab(event, 'uat')">UAT</button>
+                                        <button class="tablinks"
+                                            onclick="openTab(event, 'production')">PRODUCTION</button>
+                                    </div>
+                                    <div id="uat" class="tabcontent" style="display: block;">
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label>
+                                                CLIENT ID
+                                            </label>
+                                            <div class="flex items-center select-div " style="width: 75%;">
+                                                <input class="py-2 pl-3 pr-4 select-detail" id="cleint-id-uat"
+                                                    placeholder="cleint id uat" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label class="justify-center">
+                                                PUBLIC KEY
+                                            </label>
+                                            <div class="flex items-center select-div" style="width: 75%;">
+                                                <textarea class="py-2 pl-3 pr-4 select-detail" id="public-key-uat"
+                                                    style="height: 120px;" placeholder="public key uat"
+                                                    type="text"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label>
+                                                TRẠNG THÁI HOẠT ĐỘNG
+                                            </label>
+                                            <label class="toggle">
+                                                <input aria-label="check status" id="checkStt" checked type="checkbox">
+                                                <div class="slider"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div id="production" class="tabcontent">
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label>
+                                                CLIENT ID
+                                            </label>
+                                            <div class="flex items-center select-div " style="width: 75%;">
+                                                <input class="py-2 pl-3 pr-4 select-detail" id="cleint-id-prod"
+                                                    placeholder="cleint id production" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label class="justify-center">
+                                                PUBLIC KEY
+                                            </label>
+                                            <div class="flex items-center select-div" style="width: 75%;">
+                                                <textarea class="py-2 pl-3 pr-4 select-detail" id="public-key-prod"
+                                                    placeholder="public key production" type="text"
+                                                    style="height: 120px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="flex p-2 justify-between items-center">
+                                            <label>
+                                                TRẠNG THÁI HOẠT ĐỘNG
+                                            </label>
+                                            <label class="toggle">
+                                                <input aria-label="check" type="checkbox">
+                                                <div class="slider"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="p-4 flex items-center">
+            <div class="flex items-center p-2">
+                <i class="fa fa-circle mr-2 icon-circle-footer"></i>
+                <div class="main-title-text" id="digital-clock">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../src/plugins/js/3.4.16.js"></script>
+<script src="../src/js/index.js"></script>
+<script src="../src/plugins/js/moment.js" type="text/javascript"></script>
+
+<script src="../src/plugins/js/table/jquery-3.7.1.js"></script>
+<script src="../src/plugins/js/table/dataTables.js"></script>
+<script src="../src/plugins/js/table/dataTables.buttons.js"></script>
+<script src="../src/plugins/js/table/buttons.dataTables.js"></script>
+<script src="../src/plugins/js/table/jszip.min.js"></script>
+<script src="../src/plugins/js/table/buttons.html5.min.js"></script>
+<script src="../src/plugins/js/table/buttons.colVis.min.js"></script>
+
+<script src="../src/plugins/js/bootstrap.js"></script>
+<script type="text/javascript" src="../src/js/manage.js"></script>
+
+</html>

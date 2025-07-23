@@ -1,0 +1,293 @@
+<html lang="vi-VN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Dashboard
+    </title>
+    <link rel="icon" type="image/x-icon" href="../src/SVG/logo_Dta.svg">
+    <!-- <link rel="stylesheet" href="./src/plugins/css/all.min.css" /> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../src/css/index_u.css" />
+    <link rel="stylesheet" href="../src/css/select.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui-pro@5.10.0/dist/css/coreui.min.css" rel="stylesheet"
+        integrity="sha384-iFYnumxmAfPWEvBBHVgQ1pcH7Bj9XLrhznQ6DpVFtF3dGwlEAqe4cmd4NY4cJALM" crossorigin="anonymous">
+    <link href="../src/css/time.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="flex flex-col height-100 bg-image">
+        <!-- Header -->
+        <div class="flex display-head">
+            <div class="select-nav">
+                <div class="select-btn-nav">
+                    <i class="fas fa-bars icon-fun"></i>
+                </div>
+
+                <ul class="options-nav">
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./dashboard_u.html">
+                            TỔNG QUAN
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./detail_u.html">
+                            CHI TIẾT
+                        </a>
+                    </li>
+                    <li class="option-nav">
+                        <a class="nav-text-show" href="./report_u.html">
+                            BÁO CÁO
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center div-logo" >
+                <a href="#">
+                    <img alt="Logo" class="logo-css" src="../src/SVG/logo_Dta.svg" />
+                </a>
+            </div>
+            <div class="grid items-center w-header">
+                <header class="flex items-center">
+                    <div class="select-fun">
+                        <div class="select-btn-fun">
+                            <i class="fa fa-ellipsis-v icon-fun"></i>
+                        </div>
+                        <div class="flex items-center space-x-12 div-fun">
+                            <div class="option-fun">
+                                <i class="fas fa-bell icon-fun relative bell">
+                                    <span class="absolute top-0 left-3 bg-red-500 text-white text-xs rounded-full px-1">
+                                        99+
+                                    </span>
+                                </i>
+                            </div>
+
+                            <div class="option-fun">
+                                <i class="fas fa-user-circle icon-fun">
+                                </i>
+                            </div>
+
+                        </div>
+                    </div>
+                </header>
+                <!-- Navigation -->
+                <nav class="flex">
+                    <div class="flex items-center nav-div-show">
+                        <a class="nav-text" href="./dashboard_u.html">
+                            TỔNG QUAN
+                        </a>
+                    </div>
+                    <div class="flex items-center nav-div">
+                        <a class="nav-text" href="./detail_u.html">
+                            CHI TIẾT
+                        </a>
+                    </div>
+                    <div class="flex items-center nav-div">
+                        <a class="nav-text" href="./report_u.html">
+                            BÁO CÁO
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <main class="flex-grow p-2">
+
+            <!-- main -->
+            <div class="p-2 w-full height-100">
+                <div class="flex items-center justify-between main-title-1">
+                    <p class="main-title-text">
+                        THỐNG KÊ SỐ LƯỢNG YÊU CẦU THEO THÁNG
+                    </p>
+                    <!-- select month-year -->
+                    <div>
+                        <div class="select-menu">
+                            <div class="select-btn">
+                                <span class="sBtn-text" id="sBtn-text-u">Chọn thời gian</span>
+                                <i class="fa fa-chevron-down btn-down" style="font-size: 12pt;"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li class="option">
+                                    <span class="option-text ">Tổng</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Tháng này</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Tháng trước</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Tuần này</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Tuần trước</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Hôm nay</span>
+                                </li>
+                                <li class="option">
+                                    <span class="option-text">Hôm qua</span>
+                                </li>
+                                <div class="btn-select-time" id="div-select-u">Tùy chọn</div>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- pop up select month -->
+                    <div class="custom-model-main-u">
+                        <div class="custom-model-inner-u">
+                            <div class="close-btn-u" id="close-btn-u">×</div>
+                            <div class="custom-model-wrap-u">
+                                <div class="pop-up-content-wrap-u">
+                                    <div class="border rounded show-date" data-coreui-locale="vi-VN"
+                                        data-coreui-selection-type="month" data-coreui-toggle="calendar">
+                                    </div>
+                                    <div class="flex justify-end space-x-2 div-btn-fn">
+                                        <button class=" btn-X" type="button" id="cancel-select-u">
+                                            Hủy
+                                        </button>
+                                        <button class=" btn-Save" type="button" id="save-select-u">
+                                            Đồng ý
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-overlay-u"></div>
+                    </div>
+                </div>
+                <!-- MAIN 1-->
+                <div class="grid grid-cols-1 md:grid-row-2 gap-2 p-2 main-div ">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="p-2 rounded-lg shadow main-div">
+                            <div class="flex items-center justify-between ">
+                                <label class="main-title-text">
+                                    DỊCH VỤ EID
+                                </label>
+                                <span class="text-red-500">
+                                    40%
+                                </span>
+                            </div>
+                            <span>
+                                4000
+                            </span>
+                            <div class="bg-gray-200 h-2 rounded-full mt-2">
+                                <div class=" h-2 rounded-full color-blue" style="width: 40%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 rounded-lg shadow main-div">
+                            <div class="flex items-center justify-between ">
+                                <label class="main-title-text">
+                                    DỊCH VỤ SDK-LIVENESS-MATCH
+                                </label>
+                                <span class="text-red-500">
+                                    20%
+                                </span>
+                            </div>
+                            <span>
+                                2000
+                            </span>
+                            <div class="bg-gray-200 h-2 rounded-full mt-2">
+                                <div class=" h-2 rounded-full color-green" style="width: 20%">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-2 rounded-lg shadow main-div">
+                            <div class="flex items-center justify-between ">
+                                <label class="main-title-text">
+                                    DỊCH VỤ SDK-MATCH
+                                </label>
+                                <span class="text-red-500">
+                                    20%
+                                </span>
+                            </div>
+                            <span>
+                                2000
+                            </span>
+                            <div class="bg-gray-200 h-2 rounded-full mt-2">
+                                <div class="bg-green-500 h-2 rounded-full color-orgin" style="width: 20%; ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" p-2 rounded-lg shadow main-div">
+                            <div class="flex items-center justify-between ">
+                                <label class="main-title-text">
+                                    DỊCH VỤ FACE-RECOG
+                                </label>
+                                <span class="text-red-500">
+                                    20%
+                                </span>
+                            </div>
+                            <span>
+                                2000
+                            </span>
+                            <div class="bg-gray-200 h-2 rounded-full mt-2 ">
+                                <div class=" h-2 rounded-full color-tim" style="width: 20%; ">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex gap-2 main-grid">
+                        <!-- chart tron -->
+                        <div class="grid gap-2 p-2 items-center justify-center rounded-lg shadow main-div-f div-doughnut1">
+                            <div style="position: relative;">
+                                <canvas class="width-doughnut" id="chart-doughnut-1"></canvas>
+                                <div class="text-doughnut">
+                                    <div class="text-sum">Tổng</div>
+                                    <div class="text-value">1000</div>
+                                </div>
+                            </div>
+                            <!-- table -->
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="name-td"><i
+                                                class="fa fa-circle mr-2 icon-circle color-success"></i>Thành công
+                                        </td>
+                                        <td>7000</td>
+                                        <td>70%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="name-td"><i class="fa fa-circle mr-2 icon-circle"
+                                                style="color: #dfdfdf;"></i>Thất bại</td>
+                                        <td>3000</td>
+                                        <td>30%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- chart cot -->
+                        <div class="items-center justify-center rounded-lg shadow main-div-f w-full">
+                            <canvas class="p-2" id="chart-bar-1"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="p-4 flex items-center">
+            <div class="flex items-center p-2">
+                <i class="fa fa-circle mr-2 icon-circle-footer"></i>
+                <div class="main-title-text" id="digital-clock">
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="../src/plugins/js/3.4.16.js"></script>
+<script src="../src/js/index.js"></script>
+<script src="../src/plugins/js/Chart.min.js"></script>
+<script src="../src/js/dashboard_u.js"></script>
+
+<script src="../src/plugins/js/table/jquery-3.7.1.js"></script>
+
+<script src="../src/plugins/js/moment.js" type="text/javascript"></script>
+<script src="../src/plugins/js/coreui.bundle.js"></script>
+
+</html>

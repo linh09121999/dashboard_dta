@@ -1,0 +1,83 @@
+.calendar-cell.range .calendar-cell-inner::after,
+.calendar-row.range .calendar-cell-inner::after {
+    background-color: rgb(0, 123, 255, 0.2) !important;
+}
+
+.calendar-cell.selected:not(th, .next, .previous) .calendar-cell-inner,
+.calendar-row.selected:not(th, .next, .previous) .calendar-cell-inner {
+    background-color: rgb(0, 123, 255) !important;
+    color: white;
+    border-radius: 5px;
+}
+
+.calendar-cell-inner .month:hover{
+    color: white;
+}
+
+.calendar-cell.range .calendar-cell-inner::after,
+.calendar-row.range .calendar-cell-inner:active {
+    color: white;
+}
+
+.date-picker-dropdown.show,
+.date-picker.show .date-picker-dropdown {
+    display: block;
+    justify-self: anchor-center;
+}
+
+.calendar-cell-inner .month:active {
+    background-color: rgb(0, 123, 255) !important;
+    color: white;
+    border-radius: 5px;
+}
+
+.date-picker-input-group {
+    height: 40px !important;
+    border-radius: 10px !important;
+    padding: 0 6px !important;
+}
+
+.show-date{
+    justify-self: center;
+}
+.calendar-cell {
+    padding: none;
+}
+.btn-ok {
+    background-color: #007bff !important;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #c94f5f !important;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #ec2020 !important;
+    color: white !important;
+}
+
+.btn-ok:hover {
+    background-color: #0f3b99 !important;
+    color: white !important;
+}
+
+.btn-secondary {
+    text-align: start;
+    width: 120px;
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+.btn-secondary:hover,
+:active {
+    background-color: #007bff !important;
+    color: white;
+}
+
+.date-picker-input-group:has(:focus),
+.date-picker.show .date-picker-input-group {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25) !important;
+}
